@@ -14,7 +14,7 @@ def load_data():
 
 df = load_data
 
-col_chosen = st.selectbox('Pick one', df.columns)
+col_chosen = st.selectbox('Pick one', list(df.columns))
 
 tmp = pd.DataFrame(df.groupby(col_chosen).nunique().sort_values(by = 'user_id', ascending = False)['user_id']).head(15)
 tmp.plot.bar()
