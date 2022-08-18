@@ -12,7 +12,7 @@ def load_data():
     st_data = pd.read_csv('fake_streamlit_data.csv')
     return st_data
 
-df = load_data
+df = load_data()
 
 col_chosen = st.selectbox('Pick one', list(df.columns))
 
