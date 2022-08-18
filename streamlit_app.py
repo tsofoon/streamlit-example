@@ -45,7 +45,7 @@ df = load_data
 
 col_chosen = st.selectbox('Pick one', df.columns)
 
-tmp = pd.DataFrame(st_data.groupby(col_chosen).nunique().sort_values(by = 'user_id', ascending = False)['user_id']).head(15)
+tmp = pd.DataFrame(df.groupby(col_chosen).nunique().sort_values(by = 'user_id', ascending = False)['user_id']).head(15)
 tmp.plot.bar()
 if col_chosen =='name':
     plt.title('Top 15 used streamlit componet by active user')
